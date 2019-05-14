@@ -1,0 +1,6 @@
+select u.user_is_unsubscribed, u.username, u.user_name, u.user_mobile, u.user_email_id, u.user_city_id, u.user_sex_id as gender, u.user_age, u.user_date_of_birth, u.user_country_id, u.user_country_id, u.user_created ,u.user_active, 
+c.country_id, c.country_name from user u,  generic_country c where u.user_country_id = c.country_id;
+
+
+select u.username, u.user_name, u.user_email_id, if(u.user_sex_id=1,'Male','Female') as gender , u.user_age, u.user_date_of_birth, u.user_created ,u.user_active, u.user_is_unsubscribed,
+c.country_name from user u LEFT OUTER JOIN  generic_country c  ON ( u.user_country_id = c.country_id) ORDER BY country_name DESC;

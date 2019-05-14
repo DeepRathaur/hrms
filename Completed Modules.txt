@@ -1,0 +1,44 @@
+Completed Modules 
+
+Asset 
+Attendance_schemes
+Bank
+Bulletin
+Country
+Department
+Designation
+Employee Access Card
+Employee Address 
+Employee
+Employment Status
+Grade
+Leave Type
+Nationality
+Religion
+Shift 
+State
+Employee Asset
+Employee Attandance
+Employee background
+Employee bank
+Employee documents
+Employee_families
+employee_generated_letters
+employee_idenities
+employee_nominees
+employee_pfs
+employee_positions
+Employee_prev_employments
+Employee_probations
+Employee_qualifications
+Employee_resignations
+Holiday_list
+Hr_form
+Leave_schemes
+organization_trees
+Locations
+Weekend_policies
+Leave_application
+leave_schemes_leave_type
+Leave
+Attendance
