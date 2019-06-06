@@ -66,7 +66,7 @@ const Training = require('../controllers/training.controller');
 const TrainingMaterial = require('../controllers/trainingmaterial.controller');
 const Participants = require('../controllers/participants.controller');
 const TrainingFeedback = require('../controllers/trainingfeedback.controller');
-
+const EmployeeTask = require('../controllers/employeetask.controller');
 
 const passport = require('passport');
 const allowOnly = require('../services/routes.helper').allowOnly;
@@ -661,5 +661,14 @@ router.get('/trainingfeedback', passport.authenticate('jwt', {session: false}), 
 router.get('/trainingfeedback/:id', passport.authenticate('jwt', {session: false}), allowOnly(PARAMS.accessLevels.guest, TrainingFeedback.getOne)) ;    // R
 router.put('/trainingfeedback/:id', passport.authenticate('jwt', {session: false}), allowOnly(PARAMS.accessLevels.guest, TrainingFeedback.update)) ;    // R
 router.delete('/trainingfeedback/:id', passport.authenticate('jwt', {session: false}), allowOnly(PARAMS.accessLevels.user, TrainingFeedback.remove));    // D
+
+/**
+ * @Employee-Task  Controller Routing
+ */
+router.post('/employeetask', passport.authenticate('jwt', {session: false}), allowOnly(PARAMS.accessLevels.admin, EmployeeTask.create));    // C
+router.get('/employeetask', passport.authenticate('jwt', {session: false}), allowOnly(PARAMS.accessLevels.admin, EmployeeTask.getAll));     // R
+router.get('/employeetask/:id', passport.authenticate('jwt', {session: false}), allowOnly(PARAMS.accessLevels.guest, EmployeeTask.getOne));    // R
+router.put('/employeetask/:id', passport.authenticate('jwt', {session: false}), allowOnly(PARAMS.accessLevels.admin, EmployeeTask.update));    // U
+router.delete('/employeetask/:id', passport.authenticate('jwt', {session: false}), allowOnly(PARAMS.accessLevels.admin, EmployeeTask.remove));    // D
 
 module.exports = router;
