@@ -113,7 +113,7 @@ function validate(req) {
     const schema = {
         name: Joi.optional(),
         allotedto: Joi.number().integer().required(),
-        review_by: Joi.number().integer().required(),
+        review_by: Joi.optional(),
         review_remarks: Joi.optional(),
         remarks: Joi.optional(),
         review_status: Joi.optional(),
