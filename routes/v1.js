@@ -665,10 +665,10 @@ router.delete('/trainingfeedback/:id', passport.authenticate('jwt', {session: fa
 /**
  * @Employee-Task  Controller Routing
  */
-router.post('/employeetask', passport.authenticate('jwt', {session: false}), allowOnly(PARAMS.accessLevels.admin, EmployeeTask.create));    // C
-router.get('/employeetask', passport.authenticate('jwt', {session: false}), allowOnly(PARAMS.accessLevels.admin, EmployeeTask.getAll));     // R
+router.post('/employeetask', passport.authenticate('jwt', {session: false}), allowOnly(PARAMS.accessLevels.guest, EmployeeTask.create));    // C
+router.get('/employeetask', passport.authenticate('jwt', {session: false}), allowOnly(PARAMS.accessLevels.guest, EmployeeTask.getAll));     // R
 router.get('/employeetask/:id', passport.authenticate('jwt', {session: false}), allowOnly(PARAMS.accessLevels.guest, EmployeeTask.getOne));    // R
-router.put('/employeetask/:id', passport.authenticate('jwt', {session: false}), allowOnly(PARAMS.accessLevels.admin, EmployeeTask.update));    // U
-router.delete('/employeetask/:id', passport.authenticate('jwt', {session: false}), allowOnly(PARAMS.accessLevels.admin, EmployeeTask.remove));    // D
+router.put('/employeetask/:id', passport.authenticate('jwt', {session: false}), allowOnly(PARAMS.accessLevels.guest, EmployeeTask.update));    // U
+router.delete('/employeetask/:id', passport.authenticate('jwt', {session: false}), allowOnly(PARAMS.accessLevels.guest, EmployeeTask.remove));    // D
 
 module.exports = router;
