@@ -192,6 +192,7 @@ module.exports = (sequelize, DataTypes) => {
         this.hasMany(models.participant, { foreignKey: 'employee_id', sourceKey: 'id'});
         this.hasMany(models.employeetask, { foreignKey: 'allotedto', sourceKey: 'id'});
         this.hasMany(models.employeetask, { foreignKey: 'review_by', sourceKey: 'id'});
+        this.hasMany(models.construction_site_employee, { foreignKey: 'employee_id', sourceKey: 'id'});
     };
     Employee.prototype.toWeb = function (req) {
         let json = this.toJSON();
