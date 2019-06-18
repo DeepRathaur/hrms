@@ -28,7 +28,7 @@ const getAll = async function (req, res) {
 
     [err, employeetaskdata] = await to(employeetask.findAll({
        // order: [['name', 'ASC']],
-        include :[{model: Employee,as:'EmployeeId',attributes: ['id', 'initials','nick_name','first_name','middle_name','last_name']}]
+       include :[{model: Employee,as:'EmployeeId',attributes: ['id', 'initials','nick_name','first_name','middle_name','last_name']}]
     }));
 
     if (err) return ReE(res, err, 422)
