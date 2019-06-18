@@ -67,6 +67,9 @@ const TrainingMaterial = require('../controllers/trainingmaterial.controller');
 const Participants = require('../controllers/participants.controller');
 const TrainingFeedback = require('../controllers/trainingfeedback.controller');
 const EmployeeTask = require('../controllers/employeetask.controller');
+const ConstructionSite = require('../controllers/constructionsite.controller');
+const ConstructionSiteEmployee = require('../controllers/constructionsiteemployee.controller');
+
 
 const passport = require('passport');
 const allowOnly = require('../services/routes.helper').allowOnly;
@@ -670,5 +673,25 @@ router.get('/employeetask', passport.authenticate('jwt', {session: false}), allo
 router.get('/employeetask/:id', passport.authenticate('jwt', {session: false}), allowOnly(PARAMS.accessLevels.guest, EmployeeTask.getOne));    // R
 router.put('/employeetask/:id', passport.authenticate('jwt', {session: false}), allowOnly(PARAMS.accessLevels.guest, EmployeeTask.update));    // U
 router.delete('/employeetask/:id', passport.authenticate('jwt', {session: false}), allowOnly(PARAMS.accessLevels.guest, EmployeeTask.remove));    // D
+
+
+/**
+ * @Construction-Site  Controller Routing
+ */
+router.post('/constructionsite', passport.authenticate('jwt', {session: false}), allowOnly(PARAMS.accessLevels.admin, ConstructionSite.create));    // C
+router.get('/constructionsite', passport.authenticate('jwt', {session: false}), allowOnly(PARAMS.accessLevels.admin, ConstructionSite.getAll));     // R
+router.put('/constructionsite/:id', passport.authenticate('jwt', {session: false}), allowOnly(PARAMS.accessLevels.admin, ConstructionSite.update));    // U
+router.delete('/constructionsite/:id', passport.authenticate('jwt', {session: false}), allowOnly(PARAMS.accessLevels.admin, ConstructionSite.remove));    // D
+
+
+/**
+ * @Construction-Site-Employee  Controller Routing
+ */
+router.post('/constructionsiteemployee', passport.authenticate('jwt', {session: false}), allowOnly(PARAMS.accessLevels.admin, ConstructionSiteEmployee.create));    // C
+router.get('/constructionsiteemployee', passport.authenticate('jwt', {session: false}), allowOnly(PARAMS.accessLevels.admin, ConstructionSiteEmployee.getAll));     // R
+router.get('/constructionsiteemployee/:id', passport.authenticate('jwt', {session: false}), allowOnly(PARAMS.accessLevels.admin, ConstructionSiteEmployee.getOne));     // R
+router.put('/constructionsiteemployee/:id', passport.authenticate('jwt', {session: false}), allowOnly(PARAMS.accessLevels.admin, ConstructionSiteEmployee.update));    // U
+router.delete('/constructionsiteemployee/:id', passport.authenticate('jwt', {session: false}), allowOnly(PARAMS.accessLevels.admin, ConstructionSiteEmployee.remove));    // D
+
 
 module.exports = router;
