@@ -28,7 +28,7 @@ const getAll = async function (req, res) {
 
     [err, employeetaskdata] = await to(employeetask.findAll({
        // order: [['name', 'ASC']],
-       include :[{model: Employee,as:'EmployeeId',attributes: ['id', 'initials','nick_name','first_name','middle_name','last_name']}]
+       include :[{model: Employee,as:'EmployeeId',attributes: ['id', 'initials','nick_name','first_name','middle_name','last_name']},{model: Employee,as:'ReviewId',attributes: ['id', 'initials','nick_name','first_name','middle_name','last_name']}]
     }));
 
     if (err) return ReE(res, err, 422)
@@ -54,7 +54,8 @@ const getOne = async function (req, res) {
         where: {
             review_by: empid
         }, 
-        include :[{model: Employee,as:'EmployeeId',attributes: ['id', 'initials','nick_name','first_name','middle_name','last_name']}]
+        include :[{model: Employee,as:'EmployeeId',attributes: ['id', 'initials','nick_name','first_name','middle_name','last_name']},
+        {model: Employee,as:'ReviewId',attributes: ['id', 'initials','nick_name','first_name','middle_name','last_name']}]
     }));
 
     if (err) return ReE(res, err, 422)
@@ -77,9 +78,9 @@ const update = async function (req, res) {
     let err, employeetaskdatas, data;
     let id = parseInt(req.params.id);
     data = req.body;
-    const { error } = validate(data);
+    // const { error } = validate(data);
 
-    if (error) return ReE(res, error.details[0].message);
+    // if (error) return ReE(res, error.details[0].message);
 
     [err, employeetaskdatas] = await to(employeetask.update(data, {
             where: { id: id }
