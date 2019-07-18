@@ -11,15 +11,15 @@ module.exports = (sequelize, DataTypes) => {
     },
     swipe_date: {
       type: DataTypes.DATE,
-      allowNull:false,
+      allowNull:true,
     },
     punch_in: {
       type: DataTypes.DATE,
-      allowNull:false,
+      allowNull:true,
     },
     punch_out: { 
       type: DataTypes.DATE,
-      allowNull:false,
+      allowNull:true,
     },
     door: {
       type: DataTypes.STRING,
@@ -37,9 +37,21 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull:true,
     },
+    lattitude: {
+      type: DataTypes.STRING,
+      allowNull:true,
+    },
+    longitude: {
+      type: DataTypes.STRING,
+      allowNull:true,
+    },
+    image: {
+      type: DataTypes.text,
+      allowNull:true,
+    },
     status: {
       type: DataTypes.BOOLEAN,
-      allowNull:false,
+      allowNull:true,
       defaultValue:1
     },
   }, {});
