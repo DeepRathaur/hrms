@@ -37,6 +37,22 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull:true,
     },
+    lattitude: {
+      type: DataTypes.STRING,
+      allowNull:true,
+    },
+    longitude: {
+      type: DataTypes.STRING,
+      allowNull:true,
+    },
+    image: {
+      type: DataTypes.text,
+      allowNull:true,
+    },
+    overtime: {
+      type: DataTypes.STRING,
+      allowNull:true,
+    },
     status: {
       type: DataTypes.BOOLEAN,
       allowNull:false,
