@@ -46,16 +46,9 @@ module.exports = (sequelize, DataTypes) => {
       allowNull:true,
     },
     image: {
-      type: DataTypes.text,
+      type: DataTypes.TEXT,
       allowNull:true,
     },
-<<<<<<< HEAD
-    overtime: {
-      type: DataTypes.STRING,
-      allowNull:true,
-    },
-=======
->>>>>>> cf41eea26841047970d4bd568b3bf8c513e3a067
     status: {
       type: DataTypes.BOOLEAN,
       allowNull:true,
