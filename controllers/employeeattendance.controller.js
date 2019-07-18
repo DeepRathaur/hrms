@@ -333,7 +333,10 @@ function validate(req) {
         door: Joi.optional(),
         late: Joi.optional(),
         early_leaving: Joi.optional(),
-        overtime: Joi.optional()
+        overtime: Joi.optional(),
+        lattitude: Joi.optional(),
+        longitude: Joi.optional(),
+        image: Joi.optional()
     };
 
     return Joi.validate(req, schema);

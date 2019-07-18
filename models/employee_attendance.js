@@ -11,15 +11,15 @@ module.exports = (sequelize, DataTypes) => {
     },
     swipe_date: {
       type: DataTypes.DATE,
-      allowNull:false,
+      allowNull:true,
     },
     punch_in: {
       type: DataTypes.DATE,
-      allowNull:false,
+      allowNull:true,
     },
     punch_out: { 
       type: DataTypes.DATE,
-      allowNull:false,
+      allowNull:true,
     },
     door: {
       type: DataTypes.STRING,
@@ -49,13 +49,16 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.text,
       allowNull:true,
     },
+<<<<<<< HEAD
     overtime: {
       type: DataTypes.STRING,
       allowNull:true,
     },
+=======
+>>>>>>> cf41eea26841047970d4bd568b3bf8c513e3a067
     status: {
       type: DataTypes.BOOLEAN,
-      allowNull:false,
+      allowNull:true,
       defaultValue:1
     },
   }, {});
