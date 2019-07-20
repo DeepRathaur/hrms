@@ -236,7 +236,7 @@ router.delete('/employeeasset/:id', passport.authenticate('jwt', {session: false
 /**
  * @Employee Attendance  Controller Routing
  */
-router.post('/employeeattendance', passport.authenticate('jwt', {session: false}), allowOnly(PARAMS.accessLevels.admin, Employeeattendance.create));    // C
+router.post('/employeeattendance', passport.authenticate('jwt', {session: false}), allowOnly(PARAMS.accessLevels.guest, Employeeattendance.create));    // C
 router.get('/employeeattendance', passport.authenticate('jwt', {session: false}), allowOnly(PARAMS.accessLevels.admin, Employeeattendance.getAll));     // R
 router.get('/employeeattendance/:empid/:date', passport.authenticate('jwt', {session: false}), allowOnly(PARAMS.accessLevels.guest, Employeeattendance.getOne));     // R
 router.get('/employeeattendance/:empid/:month/:year', passport.authenticate('jwt', {session: false}), allowOnly(PARAMS.accessLevels.guest, Employeeattendance.getEmpAttendanceByMonthByempId));     // R
