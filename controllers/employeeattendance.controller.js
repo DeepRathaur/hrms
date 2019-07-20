@@ -334,9 +334,12 @@ function validate(req) {
         late: Joi.optional(),
         early_leaving: Joi.optional(),
         overtime: Joi.optional(),
-        lattitude: Joi.optional(),
-        longitude: Joi.optional(),
-        image: Joi.optional()
+        punchin_lattitude: Joi.optional(),
+        punchin_longitude: Joi.optional(),
+        punchin_image: Joi.optional(),
+        punchout_lattitude: Joi.optional(),
+        punchout_longitude: Joi.optional(),
+        punchout_image: Joi.optional()
     };
 
     return Joi.validate(req, schema);

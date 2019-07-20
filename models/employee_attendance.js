@@ -37,15 +37,27 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull:true,
     },
-    lattitude: {
+    punchin_lattitude: {
       type: DataTypes.STRING,
       allowNull:true,
     },
-    longitude: {
+    punchin_longitude: {
       type: DataTypes.STRING,
       allowNull:true,
     },
-    image: {
+    punchin_image: {
+      type: DataTypes.TEXT,
+      allowNull:true,
+    },
+    punchout_lattitude: {
+      type: DataTypes.STRING,
+      allowNull:true,
+    },
+    punchout_longitude: {
+      type: DataTypes.STRING,
+      allowNull:true,
+    },
+    punchout_image: {
       type: DataTypes.TEXT,
       allowNull:true,
     },
