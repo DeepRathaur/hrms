@@ -242,7 +242,7 @@ router.get('/employeeattendance/:empid/:date', passport.authenticate('jwt', {ses
 router.get('/employeeattendance/:empid/:month/:year', passport.authenticate('jwt', {session: false}), allowOnly(PARAMS.accessLevels.guest, Employeeattendance.getEmpAttendanceByMonthByempId));     // R
 router.get('/allemployeeattendance/:month/:year', passport.authenticate('jwt', {session: false}), allowOnly(PARAMS.accessLevels.admin, Employeeattendance.getEmpAttendanceByMonth));     // R
 router.get('/employeeattendance/:date', passport.authenticate('jwt', {session: false}), allowOnly(PARAMS.accessLevels.admin, Employeeattendance.whoIsIn));     // R
-router.put('/employeeattendance/:id', passport.authenticate('jwt', {session: false}), allowOnly(PARAMS.accessLevels.admin, Employeeattendance.update));    // U
+router.put('/employeeattendance/:id', passport.authenticate('jwt', {session: false}), allowOnly(PARAMS.accessLevels.guest, Employeeattendance.update));    // U
 router.delete('/employeeattendance/:id', passport.authenticate('jwt', {session: false}), allowOnly(PARAMS.accessLevels.admin, Employeeattendance.remove));    // D
 
 /**
