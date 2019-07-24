@@ -203,6 +203,7 @@ router.delete('/asset/:id', passport.authenticate('jwt', {session: false}), allo
 router.post('/employee', passport.authenticate('jwt', {session: false}), allowOnly(PARAMS.accessLevels.admin, Employee.create));    // C
 router.get('/employee', passport.authenticate('jwt', {session: false}), allowOnly(PARAMS.accessLevels.guest, Employee.getAll));     // R
 router.get('/employee/:id', passport.authenticate('jwt', {session: false}), allowOnly(PARAMS.accessLevels.guest, Employee.getOne));     // R
+router.get('/employeecontact', passport.authenticate('jwt', {session: false}), allowOnly(PARAMS.accessLevels.guest, Employee.employeeContact));     // R
 router.put('/employee/:id', passport.authenticate('jwt', {session: false}), allowOnly(PARAMS.accessLevels.guest, Employee.update));    // U
 router.delete('/employee/:id', passport.authenticate('jwt', {session: false}), allowOnly(PARAMS.accessLevels.admin, Employee.remove));    // D
 

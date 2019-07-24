@@ -105,7 +105,30 @@ const getOne = async function (req, res) {
 
 module.exports.getOne = getOne;
 
+const employeeContact = async function (req, res) {
+    res.setHeader('Content-Type', 'application/json');
+    let err, employee
+    [err, employee] = await to(Employee.findAll({
+        attributes:['id','first_name','last_name','mobile_number'],
+        where: {
+            is_deleted:false,
+            status:true
+        }
+    }));
+    
+    if (err) return ReE(res, err, 422)
 
+    let employee_json = []
+
+    for (let i in employee) {
+        let details = employee[i];
+        let info = details.toWeb();
+        employee_json.push(info);
+    }
+    return ReS(res, { employee: employee_json });
+}
+
+module.exports.employeeContact = employeeContact;
 const update = async function (req, res) {
     let err, employees, data;
     let id = parseInt(req.params.id);
