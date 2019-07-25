@@ -87,7 +87,7 @@ router.get('/', function (req, res) {
 router.post('/users', UserController.create);                                                                                                         // C
 router.post('/users/login', UserController.login);                     // Login
 router.get('/users', passport.authenticate('jwt', {session: false}), allowOnly(PARAMS.accessLevels.admin, UserController.getAll));                    // R
-router.get('/users/:uuid', passport.authenticate('jwt', {session: false}), allowOnly(PARAMS.accessLevels.user, UserController.getOne));                    // R
+router.get('/users/:uuid', passport.authenticate('jwt', {session: false}), allowOnly(PARAMS.accessLevels.guest, UserController.getOne));                    // R
 router.put('/users/:uuid', passport.authenticate('jwt', {session: false}), allowOnly(PARAMS.accessLevels.user, UserController.update));                    // U
 router.delete('/users/:uuid', passport.authenticate('jwt', {session: false}), allowOnly(PARAMS.accessLevels.admin, UserController.remove));                    // D
 
